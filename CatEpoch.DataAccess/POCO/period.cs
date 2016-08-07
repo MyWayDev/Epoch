@@ -6,19 +6,7 @@ using System.Threading.Tasks;
 
 namespace CatEpoch.DataAccess.POCO
 {
-    
-
-    class Promo
+    class period
     {
-   
-
-        enum Month
-        {
-            
-            Jan = 1 ,
-            
-
-            
-        }
     }
 }

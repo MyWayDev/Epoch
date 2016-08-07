@@ -66,10 +66,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCO\Epoch.cs" />
+    <Compile Include="POCO\period.cs" />
     <Compile Include="POCO\Product.cs" />
     <Compile Include="POCO\ProductGroup.cs" />
     <Compile Include="POCO\ProductTree.cs" />
-    <Compile Include="POCO\Promo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
