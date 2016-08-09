@@ -24,6 +24,7 @@ namespace CatEpoch.DataAccess
         public virtual DbSet<ProductTree> ProductTrees { get; set; }
         public virtual DbSet<Promo> Promos { get; set; }
         public virtual DbSet<PromoDef> PromoDefs { get; set; }
+        public virtual DbSet<PromoDetail> PromoDetails { get; set; } 
         public virtual DbSet<Period> Periods { get; set; }
  
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
