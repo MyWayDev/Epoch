@@ -16,6 +16,7 @@ namespace CatEpoch.DataAccess.CONFIG
         //must be explicitly configured using either the relationship fluent API or data annotations.
         public PromoConfig()
         {
+            Map(p => p.ToTable("Promos"));
             HasKey(k => k.PromoId);
             HasRequired(p => p.PromoDef)
                 .WithRequiredPrincipal(p => p.Promo)

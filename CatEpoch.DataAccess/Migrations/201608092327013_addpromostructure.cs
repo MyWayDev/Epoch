@@ -20,7 +20,7 @@ namespace CatEpoch.DataAccess.Migrations
                 .PrimaryKey(t => t.PeriodId);
             
             CreateTable(
-                "dbo.Promoes",
+                "dbo.Promos",
                 c => new
                     {
                         PromoId = c.Int(nullable: false, identity: true),
@@ -56,7 +56,7 @@ namespace CatEpoch.DataAccess.Migrations
                         PromoId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.PromoDefId)
-                .ForeignKey("dbo.Promoes", t => t.PromoDefId)
+                .ForeignKey("dbo.Promos", t => t.PromoDefId)
                 .Index(t => t.PromoDefId);
             
             CreateTable(
@@ -67,7 +67,7 @@ namespace CatEpoch.DataAccess.Migrations
                         Period_PeriodId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.Promo_PromoId, t.Period_PeriodId })
-                .ForeignKey("dbo.Promoes", t => t.Promo_PromoId, cascadeDelete: true)
+                .ForeignKey("dbo.Promos", t => t.Promo_PromoId, cascadeDelete: true)
                 .ForeignKey("dbo.Periods", t => t.Period_PeriodId, cascadeDelete: true)
                 .Index(t => t.Promo_PromoId)
                 .Index(t => t.Period_PeriodId);
@@ -79,25 +79,25 @@ namespace CatEpoch.DataAccess.Migrations
         
         public override void Down()
         {
-            DropForeignKey("dbo.PromoDefs", "PromoDefId", "dbo.Promoes");
-            DropForeignKey("dbo.Promoes", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.PromoDefs", "PromoDefId", "dbo.Promos");
+            DropForeignKey("dbo.Promos", "ProductId", "dbo.Products");
             DropForeignKey("dbo.PromoDetails", "ProductId", "dbo.Products");
             DropForeignKey("dbo.PromoDetails", "PromoDefId", "dbo.PromoDefs");
             DropForeignKey("dbo.PromoPeriods", "Period_PeriodId", "dbo.Periods");
-            DropForeignKey("dbo.PromoPeriods", "Promo_PromoId", "dbo.Promoes");
+            DropForeignKey("dbo.PromoPeriods", "Promo_PromoId", "dbo.Promos");
             DropIndex("dbo.PromoPeriods", new[] { "Period_PeriodId" });
             DropIndex("dbo.PromoPeriods", new[] { "Promo_PromoId" });
             DropIndex("dbo.PromoDefs", new[] { "PromoDefId" });
             DropIndex("dbo.PromoDetails", new[] { "ProductId" });
             DropIndex("dbo.PromoDetails", new[] { "PromoDefId" });
-            DropIndex("dbo.Promoes", new[] { "ProductId" });
+            DropIndex("dbo.Promos", new[] { "ProductId" });
             DropColumn("dbo.Products", "Discontnuied");
             DropColumn("dbo.Products", "Active");
             DropColumn("dbo.Products", "basePrice");
             DropTable("dbo.PromoPeriods");
             DropTable("dbo.PromoDefs");
             DropTable("dbo.PromoDetails");
-            DropTable("dbo.Promoes");
+            DropTable("dbo.Promos");
             DropTable("dbo.Periods");
         }
     }

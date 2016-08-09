@@ -67,9 +67,9 @@
     <Compile Include="Migrations\201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.Designer.cs">
       <DependentUpon>201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608092321194_addpromostructure.cs" />
-    <Compile Include="Migrations\201608092321194_addpromostructure.Designer.cs">
-      <DependentUpon>201608092321194_addpromostructure.cs</DependentUpon>
+    <Compile Include="Migrations\201608092327013_addpromostructure.cs" />
+    <Compile Include="Migrations\201608092327013_addpromostructure.Designer.cs">
+      <DependentUpon>201608092327013_addpromostructure.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="POCO\Epoch.cs" />
@@ -96,8 +96,8 @@
     <EmbeddedResource Include="Migrations\201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.resx">
       <DependentUpon>201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608092321194_addpromostructure.resx">
-      <DependentUpon>201608092321194_addpromostructure.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608092327013_addpromostructure.resx">
+      <DependentUpon>201608092327013_addpromostructure.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

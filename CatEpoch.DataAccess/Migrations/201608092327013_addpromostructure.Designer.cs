@@ -13,7 +13,7 @@ namespace CatEpoch.DataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201608092321194_addpromostructure"; }
+            get { return "201608092327013_addpromostructure"; }
         }
         
         string IMigrationMetadata.Source
