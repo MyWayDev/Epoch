@@ -17,11 +17,12 @@ namespace CatEpoch.DataAccess.CONFIG
         public PromoConfig()
         {
             HasKey(k => k.PromoId);
-            HasOptional(p => p.PromoDef)
-                .WithRequired(p => p.Promo)
-                .WillCascadeOnDelete(true);
+            HasRequired(p => p.PromoDef)
+                .WithRequiredPrincipal(p => p.Promo)
+                .WillCascadeOnDelete(false);
+            HasMany(p => p.Periods).WithMany(p => p.Promos);
 
-            
+
         }
     }
 }

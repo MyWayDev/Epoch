@@ -14,10 +14,10 @@ namespace CatEpoch.DataAccess.POCO
        
        // PromoDefinition One to One.. 
        public int PromoDefId { get; set; }
-       public PromoDef PromoDef { get; set; }
+       public virtual PromoDef PromoDef { get; set; }
        // Product Relationship One to Many...
        public string ProductId { get; set; }
-       public Product Product { get; set; }
+       public virtual Product Product { get; set; }
        public PromoGrade PromoGrade { get; set; }
        public virtual IList<Period> Periods { get; set; }
     }
