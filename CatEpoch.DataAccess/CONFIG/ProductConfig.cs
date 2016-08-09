@@ -18,7 +18,8 @@ namespace CatEpoch.DataAccess.CONFIG
                 .WithMany(p => p.Products)
                 .HasForeignKey(g => g.GroupId);
             Property(p => p.Id).HasMaxLength(10).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None).IsRequired();
-            
+            HasMany(p => p.Promos).WithOptional(p => p.Product).HasForeignKey(f => f.PromoId);
+
 
         }
     }

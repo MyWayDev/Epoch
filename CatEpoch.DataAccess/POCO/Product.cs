@@ -15,7 +15,15 @@ namespace CatEpoch.DataAccess.POCO
        }
         public string Id { get; set; }
         public string ProductName { get; set; }
+        public double basePrice { get; set; }
+        public bool Active { get; set; }
+        public bool Discontnuied { get; set; }
+        
+        // ProductGroup Relationship One to Many.
         public int GroupId { get; set; }
-        public virtual ProductGroup ProductGroup { get; set; }
+        public virtual ProductGroup ProductGroup { get; set; }  
+       // Promo Relationship Many to One...     
+        public virtual  IList<Promo> Promos { get; set; }
+        public virtual IList<PromoDetail> PromoDetails { get; set; } 
     }
 }

@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CatEpoch.DataAccess.POCO
+{
+   public class Promo
+    {
+       public int PromoId { get; set; }
+       public string promoName { get; set; }
+       
+       // PromoDefinition One to One.. 
+       public int PromoDefId { get; set; }
+       public PromoDef PromoDef { get; set; }
+       // Product Relationship One to Many...
+       public string ProductId { get; set; }
+       public Product Product { get; set; }
+       public PromoGrade PromoGrade { get; set; }
+       public virtual IList<Period> Periods { get; set; }
+    }
+    public enum PromoGrade
+    {
+        A = 1,
+        B = 2,
+        C = 3        
+    }
+}
