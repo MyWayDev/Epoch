@@ -15,7 +15,7 @@ namespace CatEpoch.DataAccess.POCO
        }
         public string Id { get; set; }
         public string ProductName { get; set; }
-        public double basePrice { get; set; }
+        public double BasePrice { get; set; }
         public bool Active { get; set; }
         public bool Discontnuied { get; set; }
         

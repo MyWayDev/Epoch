@@ -13,7 +13,6 @@ namespace CatEpoch.DataAccess.POCO
        public string promoName { get; set; }
        
        // PromoDefinition One to One.. 
-       public int PromoDefId { get; set; }
        public virtual PromoDef PromoDef { get; set; }
        // Product Relationship One to Many...
        public string ProductId { get; set; }

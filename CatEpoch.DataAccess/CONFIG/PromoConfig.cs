@@ -20,7 +20,7 @@ namespace CatEpoch.DataAccess.CONFIG
             HasKey(k => k.PromoId);
             HasRequired(p => p.PromoDef)
                 .WithRequiredPrincipal(p => p.Promo)
-                .WillCascadeOnDelete(false);
+                .WillCascadeOnDelete(true);
             HasMany(p => p.Periods).WithMany(p => p.Promos);
 
 
