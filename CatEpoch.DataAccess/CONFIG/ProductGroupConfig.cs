@@ -13,10 +13,23 @@ namespace CatEpoch.DataAccess.CONFIG
     {
         public ProductGroupConfig()
         {
-            HasKey(k => k.Id);
-            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            HasMany(t => t.ProductTrees).WithRequired(g => g.ProductGroup).HasForeignKey(p => p.GroupId);
+            Map(p => p.ToTable("Product.ProductGroups"));
+
+            MapToStoredProcedures(s => s.Insert(i => i.HasName("AddGroup")));
             
+            HasKey(k => k.Id);
+            
+            HasMany(s => s.SalesHistories)
+                .WithRequired(p => p.ProductGroup)
+                .HasForeignKey(p => p.GroupId);
+           
+            HasMany(t => t.ProductTrees)
+                .WithRequired(g => g.ProductGroup)
+                .HasForeignKey(p => p.GroupId);
+
+            Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(p => p.GroupName).HasMaxLength(55);
+
         }
     }
 }

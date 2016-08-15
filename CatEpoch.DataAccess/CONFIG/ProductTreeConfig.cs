@@ -13,9 +13,12 @@ namespace CatEpoch.DataAccess.CONFIG
     {
         public ProductTreeConfig()
         {
+            Map(p => p.ToTable("Product.ProductTrees"));
             HasKey(k => k.OrgNode);
+           
             Property(p => p.OrgLevel)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
+            
             Property(p=>p.ParentId).IsOptional();
         }
 

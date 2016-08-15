@@ -48,12 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONFIG\DimDateConfig.cs" />
     <Compile Include="CONFIG\ProductConfig.cs" />
     <Compile Include="CONFIG\ProductGroupConfig.cs" />
     <Compile Include="CONFIG\ProductTreeConfig.cs" />
     <Compile Include="CONFIG\PromoConfig.cs" />
-    <Compile Include="CONFIG\PromoDefConfig.cs" />
-    <Compile Include="CONFIG\PromoDetailConfig.cs" />
+    <Compile Include="CONFIG\SalesHistoryConfig.cs" />
     <Compile Include="DBC.cs" />
     <Compile Include="Migrations\201608012041579_initial.cs" />
     <Compile Include="Migrations\201608012041579_initial.Designer.cs">
@@ -67,15 +67,24 @@
     <Compile Include="Migrations\201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.Designer.cs">
       <DependentUpon>201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608102033226_addpromostructure.cs" />
+    <Compile Include="Migrations\201608102033226_addpromostructure.Designer.cs">
+      <DependentUpon>201608102033226_addpromostructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608140908199_AddSalesHistoryAndDimDatePlusPromoRedesgin.cs" />
+    <Compile Include="Migrations\201608140908199_AddSalesHistoryAndDimDatePlusPromoRedesgin.Designer.cs">
+      <DependentUpon>201608140908199_AddSalesHistoryAndDimDatePlusPromoRedesgin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="POCO\DimDate.cs" />
     <Compile Include="POCO\Epoch.cs" />
     <Compile Include="POCO\Period.cs" />
     <Compile Include="POCO\Product.cs" />
     <Compile Include="POCO\ProductGroup.cs" />
     <Compile Include="POCO\ProductTree.cs" />
     <Compile Include="POCO\Promo.cs" />
-    <Compile Include="POCO\PromoDef.cs" />
-    <Compile Include="POCO\PromoDetail.cs" />
+    <Compile Include="POCO\PromoProduct.cs" />
+    <Compile Include="POCO\SalesHistory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.resx">
       <DependentUpon>201608012228043_ModifyProductGroupColumnToIdentityComputedDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608102033226_addpromostructure.resx">
+      <DependentUpon>201608102033226_addpromostructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140908199_AddSalesHistoryAndDimDatePlusPromoRedesgin.resx">
+      <DependentUpon>201608140908199_AddSalesHistoryAndDimDatePlusPromoRedesgin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

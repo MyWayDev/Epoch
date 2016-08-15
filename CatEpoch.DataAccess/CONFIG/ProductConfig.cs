@@ -11,16 +11,44 @@ namespace CatEpoch.DataAccess.CONFIG
 {
     public class ProductConfig : EntityTypeConfiguration<Product>
     {
+        
         public ProductConfig()
         {
+            Map(p => p.ToTable("Product.Products"));
+            
             HasKey(p => p.Id);
+            
             HasRequired(g => g.ProductGroup)
                 .WithMany(p => p.Products)
                 .HasForeignKey(g => g.GroupId);
-            Property(p => p.Id).HasMaxLength(10).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None).IsRequired();
-            HasMany(p=>p.Promos).WithOptional(p=>p.Product).WillCascadeOnDelete(true);
-            HasMany(p => p.PromoDetails).WithOptional(p => p.Product).WillCascadeOnDelete(true);
             
+            HasMany(p => p.Promos)
+                .WithOptional(p => p.Product)
+                .HasForeignKey(p=>p.ProductId)
+                .WillCascadeOnDelete(true);
+            
+            HasMany(s=>s.SalesHistories)
+                .WithRequired(p=>p.Product)
+                .HasForeignKey(p=>p.ProductId)
+                .WillCascadeOnDelete(false);
+            
+            HasMany(p=>p.PromoProducts)
+                .WithOptional(p=>p.Product)
+                .HasForeignKey(p=>p.ProductId)
+                .WillCascadeOnDelete(true);
+        
+            Property(p => p.Id).HasMaxLength(10).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None).IsRequired();
+            Property(p => p.ProductName).IsRequired().HasMaxLength(55);
+            Property(p => p.OldId).IsOptional().HasMaxLength(10);
+            //Property(p => p.Active).HasDatabaseGeneratedOption(databaseGeneratedOption:);
+
+
+
+
+
+
+
+
 
 
 

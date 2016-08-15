@@ -8,12 +8,13 @@ namespace CatEpoch.DataAccess.POCO
 {
     public class ProductGroup
     {
-       
+        public virtual IList<Product> Products { get; set; }
+        public virtual IList<ProductTree> ProductTrees { get; set; }
+        public virtual IList<SalesHistory> SalesHistories { get; set; }
+
         public int Id { get; set; }
         public string GroupName { get; set; }
-        public virtual IList<Product> Products { get; set; } 
-        public virtual IList<ProductTree> ProductTrees { get; set; }
-
+         
 
     }
 }

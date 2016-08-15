@@ -14,21 +14,22 @@ namespace CatEpoch
     {
         static void Main(string[] args)
         {
-            var ctx = new DBC();
-            var q = ctx.ProductGroups.SelectMany(p => ctx.Products, (group, product) => new
-            {
-                groupname = group.GroupName,
-                productid = product.Id,
-                productname = product.ProductName,
-                groupid = group.Id
-            }).Where(g => g.groupid > 1).Take(1000).OrderBy(g => g.groupid);
+#region querycode
+            //var ctx = new DBC();
+            //var q = ctx.ProductGroups.SelectMany(p => ctx.Products, (group, product) => new
+            //{
+            //    groupname = group.GroupName,
+            //    productid = product.Id,
+            //    productname = product.ProductName,
+            //    groupid = group.Id
+            //}).Where(g => g.groupid > 1).Take(1000).OrderBy(g => g.groupid);
 
 
-            foreach (var group in q)
-            {
-                Console.WriteLine("{0}\t{1} {2} {3}", group.groupid, group.groupname, group.productid, group.productname);
-            }
-            Console.ReadLine();
+            //foreach (var group in q)
+            //{
+            //    Console.WriteLine("{0}\t{1} {2} {3}", group.groupid, group.groupname, group.productid, group.productname);
+            //}
+            //Console.ReadLine();
             
 
           //  List<string> monthNameslList = DateTimeFormatInfo.CurrentInfo.MonthNames.Take(12).ToList();
@@ -49,7 +50,11 @@ namespace CatEpoch
           //  }
             
           //  Console.ReadLine();
+#endregion
 
+            float price = 253223399999999.56f;
+            Console.WriteLine("Price: {0}", price);
+            Console.ReadLine();
         }
     }
 }
